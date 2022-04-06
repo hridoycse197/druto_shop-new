@@ -12,12 +12,8 @@ class NameTextFormFieldWidget extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        controller.validateName(value!);
-      },
-      onSaved: (value) {
-        controller.name = value!;
-      },
+      validator: (value) => controller.validateName(value!),
+      onSaved: (value) => controller.name = value!,
       keyboardType: TextInputType.number,
       controller: controller.nameController,
       decoration: const InputDecoration(

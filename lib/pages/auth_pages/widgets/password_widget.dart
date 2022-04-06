@@ -1,35 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:get/state_manager.dart';
 
 import '../../../shared/color_utils.dart';
 import '../controller/sign_up_controller.dart';
 
-class PasswordWidget extends StatelessWidget {
+class PasswordWidget extends GetView<SignUpController> {
   const PasswordWidget({
     Key? key,
-    required this.controller,
   }) : super(key: key);
-
-  final SignUpController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: controller.passvisibility ? false : true,
-      validator: (value) {
-        controller.validatepassword(value!);
-      },
-      onSaved: (value) {
-        controller.password = value!;
-      },
+      obscureText: controller.passvisibility! ? false : true,
+      validator: (value) => controller.validatepassword(value!),
+      onSaved: (value) => controller.password = value!,
       keyboardType: TextInputType.number,
       controller: controller.passwordController,
       decoration: InputDecoration(
         suffixIcon: GestureDetector(
           onTap: (() {
-            controller.passvisibility = !controller.passvisibility;
+            controller.passvisibility = controller.passvisibility!;
           }),
           child: Icon(
-            controller.passvisibility ? Icons.visibility : Icons.visibility_off,
+            controller.passvisibility!
+                ? Icons.visibility
+                : Icons.visibility_off,
             color: ColorUtil.maincolor,
           ),
         ),

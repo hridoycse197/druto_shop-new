@@ -1,25 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../shared/color_utils.dart';
 import '../controller/sign_up_controller.dart';
 
-class EmailTextFormFieldWidget extends StatelessWidget {
+class EmailTextFormFieldWidget extends GetView<SignUpController> {
   const EmailTextFormFieldWidget({
     Key? key,
-    required this.controller,
   }) : super(key: key);
-
-  final SignUpController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        controller.validateEmail(value!);
-      },
-      onSaved: (value) {
-        controller.email = value!;
-      },
+      validator: (value) => controller.validateEmail(value!),
+      onSaved: (value) => controller.email = value!,
       keyboardType: TextInputType.number,
       controller: controller.emailController,
       decoration: const InputDecoration(

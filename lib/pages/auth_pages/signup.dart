@@ -15,7 +15,6 @@ import '../../widgets/customappbar.dart';
 import 'widgets/custom_text_form_field.dart';
 
 class SignUp extends GetView<SignUpController> {
-  SignUpController controller = Get.put(SignUpController());
   static const route = '/signup';
   SignUp({Key? key}) : super(key: key);
 
@@ -52,26 +51,26 @@ class SignUp extends GetView<SignUpController> {
                     height: height * 0.05,
                   ),
                   customtextwidget(title: 'Phone Number'),
-                  PhoneNumberTextFormFieldWidget(controller: controller),
+                  PhoneNumberTextFormFieldWidget(),
 
                   // Email Field
                   SizedBox(
                     height: height * 0.05,
                   ),
                   customtextwidget(title: 'Email'),
-                  EmailTextFormFieldWidget(controller: controller),
+                  EmailTextFormFieldWidget(),
                   // password
                   SizedBox(
                     height: height * 0.05,
                   ),
                   customtextwidget(title: 'Password'),
-                  PasswordWidget(controller: controller),
+                  PasswordWidget(),
                   // confirm password
                   SizedBox(
                     height: height * 0.05,
                   ),
                   customtextwidget(title: 'Confirm Password'),
-                  RePasswordWidget(controller: controller),
+                  RePasswordWidget(),
                   // remember me text
                   Container(
                     width: double.infinity,
@@ -109,7 +108,7 @@ class SignUp extends GetView<SignUpController> {
                             MaterialStateProperty.all(ColorUtil.maincolor),
                       ),
                       onPressed: () {
-                        controller.checkSignup();
+                        //controller.checkSignup();
                       },
                       child: const Text(
                         'SignUp',

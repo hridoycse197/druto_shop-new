@@ -1,28 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_state_manager/src/simple/get_view.dart';
 
 import '../../../shared/color_utils.dart';
 import '../controller/sign_up_controller.dart';
 
-class RePasswordWidget extends StatelessWidget {
+class RePasswordWidget extends GetView<SignUpController> {
   const RePasswordWidget({
     Key? key,
-    required this.controller,
   }) : super(key: key);
-
-  final SignUpController controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      validator: (value) {
-        controller.validaterepassword(value!);
-      },
-      onSaved: (value) {
-        controller.confirmpassword = value!;
-      },
+      validator: (value) => controller.validaterepassword(value!),
+      onSaved: (value) => controller.confirmpassword = value!,
       keyboardType: TextInputType.number,
       controller: controller.confirmpasswordController,
-      decoration: const InputDecoration(
+      decoration: InputDecoration(
+        suffixIcon: GestureDetector(
+          onTap: () => controller.passvisibility = controller.passvisibility!,
+          child: Icon(
+            controller.passvisibility!
+                ? Icons.visibility
+                : Icons.visibility_off,
+            color: ColorUtil.maincolor,
+          ),
+        ),
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: ColorUtil.black),
         ),
