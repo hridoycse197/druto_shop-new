@@ -1,4 +1,6 @@
-import 'package:druto_shop/pages/auth_pages/signin_page.dart';
+import 'package:druto_shop/bindings/all_controller_binding.dart';
+import 'package:druto_shop/pages/auth_pages/sign_in_page_views.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -29,7 +31,8 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Roboto',
         primarySwatch: Colors.blue,
       ),
-      home: SignInPage(),
+      initialBinding: AllControllerBinding(),
+      home: SignInPageView(),
     );
   }
 }
