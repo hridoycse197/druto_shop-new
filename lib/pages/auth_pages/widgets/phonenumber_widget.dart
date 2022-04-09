@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
-import '../../../shared/color_utils.dart';
+import '../../../shared/styles/colors.dart';
 import '../controller/sign_up_controller.dart';
 
 class PhoneNumberTextFormFieldWidget extends GetView<SignUpController> {
@@ -18,20 +18,20 @@ class PhoneNumberTextFormFieldWidget extends GetView<SignUpController> {
       controller: controller.phonenumberController,
       decoration: InputDecoration(
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black),
+          borderSide: BorderSide(color: ColorResources.Black),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.maincolor),
+          borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
         contentPadding: EdgeInsets.only(top: 18),
         hintText: 'Phone Number',
         prefixIcon: Icon(
           Icons.person,
           size: 25,
-          color: ColorUtil.maincolor,
+          color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black, width: 4),
+          borderSide: BorderSide(color: ColorResources.Black, width: 4),
         ),
       ),
     );

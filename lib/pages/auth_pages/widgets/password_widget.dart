@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
-import '../../../shared/color_utils.dart';
+import '../../../shared/styles/colors.dart';
 import '../controller/sign_up_controller.dart';
 
 class PasswordWidget extends GetView<SignUpController> {
@@ -12,38 +12,35 @@ class PasswordWidget extends GetView<SignUpController> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      obscureText: controller.passvisibility! ? false : true,
+      obscureText: controller.passvisibility ? false : true,
       validator: (value) => controller.validatepassword(value!),
       onSaved: (value) => controller.password = value!,
-      keyboardType: TextInputType.number,
       controller: controller.passwordController,
       decoration: InputDecoration(
         suffixIcon: GestureDetector(
           onTap: (() {
-            controller.passvisibility = controller.passvisibility!;
+            controller.passvisibility = !controller.passvisibility;
           }),
           child: Icon(
-            controller.passvisibility!
-                ? Icons.visibility
-                : Icons.visibility_off,
-            color: ColorUtil.maincolor,
+            controller.passvisibility ? Icons.visibility : Icons.visibility_off,
+            color: ColorResources.PRIMARY_COLOR,
           ),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black),
+          borderSide: BorderSide(color: ColorResources.Black),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.maincolor),
+          borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
         contentPadding: EdgeInsets.only(top: 18),
         hintText: 'Password here',
         prefixIcon: Icon(
           Icons.person,
           size: 25,
-          color: ColorUtil.maincolor,
+          color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black, width: 4),
+          borderSide: BorderSide(color: ColorResources.Black, width: 4),
         ),
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../shared/color_utils.dart';
+import '../../../shared/styles/colors.dart';
 import '../controller/sign_up_controller.dart';
 
 class EmailTextFormFieldWidget extends GetView<SignUpController> {
@@ -14,24 +14,24 @@ class EmailTextFormFieldWidget extends GetView<SignUpController> {
     return TextFormField(
       validator: (value) => controller.validateEmail(value!),
       onSaved: (value) => controller.email = value!,
-      keyboardType: TextInputType.number,
+      keyboardType: TextInputType.emailAddress,
       controller: controller.emailController,
       decoration: const InputDecoration(
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black),
+          borderSide: BorderSide(color: ColorResources.Black),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.maincolor),
+          borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
         contentPadding: EdgeInsets.only(top: 18),
         hintText: 'Email',
         prefixIcon: Icon(
           Icons.person,
           size: 25,
-          color: ColorUtil.maincolor,
+          color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black, width: 4),
+          borderSide: BorderSide(color: ColorResources.Black, width: 4),
         ),
       ),
     );

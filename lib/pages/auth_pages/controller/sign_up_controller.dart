@@ -1,6 +1,8 @@
+import 'package:druto_shop/models/sign_up_model.dart';
 import 'package:druto_shop/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpController extends GetxController {
   final GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
@@ -13,9 +15,9 @@ class SignUpController extends GetxController {
   var name = '';
   var phonenumber = '';
   var email = '';
-  var password = '';
-  var confirmpassword = '';
-  bool passvisibility = false;
+  var password;
+  var confirmpassword;
+  bool passvisibility = true;
 
   @override
   void onInit() {
@@ -67,10 +69,11 @@ class SignUpController extends GetxController {
     bool passwordbool = RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(value);
-    if (passwordbool || value.length < 8) {
+    if (value.length < 8) {
       return "Provide valid password";
-    } else if (value != confirmpassword) {
-      return "Password dosent match";
+      // } else if (value != confirmpassword) {
+      //   return "Password dosent match";
+      // }
     }
   }
 
@@ -78,19 +81,39 @@ class SignUpController extends GetxController {
     bool passwordbool = RegExp(
             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
         .hasMatch(value);
-    if (passwordbool || value.length < 8) {
+    if (value.length < 8) {
       return "Provide valid password";
-    } else if (value != password) {
-      return "Password dosent match";
+      // } else if (value != password) {
+      //   return "Password dosent match";
+      // }
     }
   }
 
   void checkSignup() {
     final isValid = signupFormKey.currentState!.validate();
-    if (!isValid) {
+    if (isValid) {
       Get.to(Homepage());
     } else {
-      signupFormKey.currentState!.validate();
+      print('this is error');
+    }
+  }
+
+  //
+
+  Future<SignUpModel?> createUser(String fullName, String email, int password,
+      String passwordConfirmation) async {
+    final String apiUrl = "https://script.drutosoft.com/grocery/api/register";
+    final response = await http.post(Uri.parse(apiUrl), body: {
+      "full_name": fullName,
+      "email": email,
+      "password": password,
+      "password_confirmation": passwordConfirmation,
+    });
+    if (response.statusCode == 201) {
+      final String responsString = response.body;
+      return signUpModelFromJson(responsString);
+    } else {
+      return null;
     }
   }
 }

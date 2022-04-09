@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-import '../../../shared/color_utils.dart';
+import '../../../shared/styles/colors.dart';
 import '../controller/sign_up_controller.dart';
 
 class RePasswordWidget extends GetView<SignUpController> {
@@ -18,29 +18,29 @@ class RePasswordWidget extends GetView<SignUpController> {
       controller: controller.confirmpasswordController,
       decoration: InputDecoration(
         suffixIcon: GestureDetector(
-          onTap: () => controller.passvisibility = controller.passvisibility!,
+          onTap: () => controller.passvisibility = !controller.passvisibility!,
           child: Icon(
             controller.passvisibility!
                 ? Icons.visibility
                 : Icons.visibility_off,
-            color: ColorUtil.maincolor,
+            color: ColorResources.PRIMARY_COLOR,
           ),
         ),
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black),
+          borderSide: BorderSide(color: ColorResources.Black),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.maincolor),
+          borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
         contentPadding: EdgeInsets.only(top: 18),
         hintText: 'Confirm password',
         prefixIcon: Icon(
           Icons.person,
           size: 25,
-          color: ColorUtil.maincolor,
+          color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black, width: 4),
+          borderSide: BorderSide(color: ColorResources.Black, width: 4),
         ),
       ),
     );

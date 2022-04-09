@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 
-import '../../../shared/color_utils.dart';
+import '../../../shared/styles/colors.dart';
 import '../controller/sign_up_controller.dart';
 
 class NameTextFormFieldWidget extends GetView<SignUpController> {
@@ -14,14 +14,13 @@ class NameTextFormFieldWidget extends GetView<SignUpController> {
     return TextFormField(
       validator: (value) => controller.validateName(value!),
       onSaved: (value) => controller.name = value!,
-      keyboardType: TextInputType.number,
       controller: controller.nameController,
       decoration: const InputDecoration(
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black),
+          borderSide: BorderSide(color: ColorResources.Black),
         ),
         focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.maincolor),
+          borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
         errorBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: Colors.red),
@@ -31,10 +30,10 @@ class NameTextFormFieldWidget extends GetView<SignUpController> {
         prefixIcon: Icon(
           Icons.person,
           size: 25,
-          color: ColorUtil.maincolor,
+          color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorUtil.black, width: 4),
+          borderSide: BorderSide(color: ColorResources.Black, width: 4),
         ),
       ),
     );

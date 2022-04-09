@@ -1,3 +1,4 @@
+import 'package:druto_shop/models/sign_up_model.dart';
 import 'package:druto_shop/pages/auth_pages/controller/sign_up_controller.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/emailformfield.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/nameformfield.dart';
@@ -10,20 +11,21 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../shared/color_utils.dart';
+import '../../shared/styles/colors.dart';
 import '../../widgets/customappbar.dart';
 import 'widgets/custom_text_form_field.dart';
 
 class SignUp extends GetView<SignUpController> {
   static const route = '/signup';
   SignUp({Key? key}) : super(key: key);
+  SignUpModel? sign;
 
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: ColorUtil.backgroundcolor,
+      backgroundColor: ColorResources.BACKGROUND_COLOR,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(kToolbarHeight),
         child: CustomAppbarWidget(title: 'Signup'),
@@ -44,7 +46,7 @@ class SignUp extends GetView<SignUpController> {
 
                   customtextwidget(title: 'Name'),
 
-                  NameTextFormFieldWidget(),
+                  const NameTextFormFieldWidget(),
 
                   // PhoneNumber Field
                   SizedBox(
@@ -79,8 +81,8 @@ class SignUp extends GetView<SignUpController> {
                       value: true,
                       onChanged: (newvalue) {},
                       title: customtextwidget(title: 'Remember me'),
-                      activeColor: ColorUtil.maincolor,
-                      checkColor: ColorUtil.black,
+                      activeColor: ColorResources.PRIMARY_COLOR,
+                      checkColor: ColorResources.Black,
                       controlAffinity: ListTileControlAffinity.leading,
                     ),
                   ),
@@ -101,18 +103,28 @@ class SignUp extends GetView<SignUpController> {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(28.0),
-                            side: BorderSide(color: ColorUtil.maincolor),
+                            side:
+                                BorderSide(color: ColorResources.PRIMARY_COLOR),
                           ),
                         ),
-                        backgroundColor:
-                            MaterialStateProperty.all(ColorUtil.maincolor),
+                        backgroundColor: MaterialStateProperty.all(
+                            ColorResources.PRIMARY_COLOR),
                       ),
-                      onPressed: () {
-                        //controller.checkSignup();
+                      onPressed: () async {
+                        controller.checkSignup();
+
+                        final SignUpModel? user = await controller.createUser(
+                            controller.name,
+                            controller.email,
+                            controller.password as int,
+                            controller.confirmpassword);
+
+                        print(sign!.fullName);
                       },
                       child: const Text(
                         'SignUp',
-                        style: TextStyle(fontSize: 35, color: ColorUtil.black),
+                        style: TextStyle(
+                            fontSize: 35, color: ColorResources.Black),
                       ),
                     ),
                   )

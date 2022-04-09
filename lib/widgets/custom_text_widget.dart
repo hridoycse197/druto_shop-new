@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../shared/color_utils.dart';
+import '../shared/styles/colors.dart';
 
 class customtextwidget extends StatelessWidget {
   customtextwidget({Key? key, required this.title, double fontsize = 25})
@@ -17,7 +17,9 @@ class customtextwidget extends StatelessWidget {
       child: Text(
         title,
         style: GoogleFonts.raleway(
-            fontSize: 18, color: ColorUtil.black, fontWeight: FontWeight.bold),
+            fontSize: 18,
+            color: ColorResources.Black,
+            fontWeight: FontWeight.bold),
       ),
     );
   }
