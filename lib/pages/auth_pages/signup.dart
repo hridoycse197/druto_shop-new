@@ -6,6 +6,7 @@ import 'package:druto_shop/pages/auth_pages/widgets/password_widget.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/phonenumber_widget.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/repassword_widget.dart';
 import 'package:druto_shop/routes/allcontrollerbinding.dart';
+import 'package:druto_shop/services/signupservices.dart';
 import 'package:druto_shop/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -113,13 +114,11 @@ class SignUp extends GetView<SignUpController> {
                       onPressed: () async {
                         controller.checkSignup();
 
-                        final SignUpModel? user = await controller.createUser(
+                        await SignUpServices().createUser(
                             controller.name,
                             controller.email,
-                            controller.password as int,
+                            controller.password,
                             controller.confirmpassword);
-
-                        print(sign!.fullName);
                       },
                       child: const Text(
                         'SignUp',
