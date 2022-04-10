@@ -1,5 +1,6 @@
-import 'package:druto_shop/controller/login_controller.dart';
 import 'package:get/get.dart';
+
+import '../pages/auth_pages/controller/signin_controller.dart';
 
 class AllControllerBinding implements Bindings {
   @override

@@ -1,4 +1,5 @@
-import 'package:druto_shop/controller/login_controller.dart';
+import 'package:druto_shop/pages/auth_pages/controller/signin_controller.dart';
+import 'package:druto_shop/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -170,8 +171,12 @@ class SignInPageView extends GetView<LoginController> {
                         primary: ColorResources.PRIMARY_COLOR,
                         minimumSize: const Size(double.infinity, 50.0),
                       ),
-                      onPressed: () {
-                        controller.checkLogin();
+                      onPressed: () async {
+                        if (controller.checkLogin()) {
+                          await controller
+                              .userLogin(controller.emailController.text);
+                          //Get.to(HomePage());
+                        }
                       },
                       child: const Text(
                         "Sign in",
@@ -225,6 +230,5 @@ class SignInPageView extends GetView<LoginController> {
         ),
       ),
     );
-    ;
   }
 }

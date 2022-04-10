@@ -1,9 +1,15 @@
+import 'dart:ffi';
+
+import 'package:druto_shop/pages/auth_pages/model/signin_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../api_service/api_services.dart';
 
 class LoginController extends GetxController {
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
   var isVisible = true.obs;
+  late final LoginApiService _loginApiService;
 
   late TextEditingController emailController, passwordController;
   var email = '';
@@ -15,6 +21,7 @@ class LoginController extends GetxController {
     super.onInit();
     emailController = TextEditingController();
     passwordController = TextEditingController();
+    _loginApiService = Get.put(LoginApiService());
   }
 
   @override
@@ -39,11 +46,15 @@ class LoginController extends GetxController {
     return null;
   }
 
-  void checkLogin() {
+  checkLogin() {
     final isValid = loginFormKey.currentState!.validate();
     if (!isValid) {
       return;
     }
     loginFormKey.currentState!.save();
+  }
+
+  Future<void> userLogin(String email) async {
+    await _loginApiService.fetchLogin(LoginModel());
   }
 }
