@@ -28,4 +28,5 @@ class ColorResources {
   static const Color PRIMARY_DEEP = Color(0xFF392055);
   static const Color DIVIDER_COLOR = Color(0xFFE1E1E8);
   static const Color OFF_BG = Color(0xFF819C39);
+
 }

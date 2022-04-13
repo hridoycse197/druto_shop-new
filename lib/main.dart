@@ -1,9 +1,15 @@
-import 'package:druto_shop/pages/auth_pages/signin_page.dart';
+
+
+import 'package:druto_shop/bindings/all_controller_binding.dart';
+import 'package:druto_shop/pages/auth_pages/login_page_view.dart';
+import 'package:druto_shop/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
     [
       DeviceOrientation.portraitUp,
@@ -14,6 +20,8 @@ void main() {
       statusBarColor: Colors.transparent,
     ),
   );
+  await GetStorage.init();
+
   runApp(const MyApp());
 }
 
@@ -23,13 +31,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
       debugShowCheckedModeBanner: false,
       title: 'Flutter Grocery App',
       theme: ThemeData(
         fontFamily: 'Roboto',
         primarySwatch: Colors.blue,
       ),
-      home: SignInPage(),
+      initialBinding: AllControllerBinding(),
+      home: SplashView(), 
+
     );
   }
 }
