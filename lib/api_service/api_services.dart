@@ -1,3 +1,4 @@
+import 'package:druto_shop/pages/auth_pages/model/login_request_model.dart';
 import 'package:get/get_connect/connect.dart';
 import 'package:get/get_connect/http/src/status/http_status.dart';
 
@@ -7,11 +8,11 @@ class LoginApiService extends GetConnect {
   final String loginUrl = 'https://script.drutosoft.com/grocery/api/login';
   final String registerUrl = 'https://reqres.in/api/register';
 
-  Future<LoginModel?> fetchLogin(LoginModel model) async {
-    final response = await post(loginUrl, model.toJson());
+  Future<LoginResposeModel?> fetchLogin(LoginRequestModel user) async {
+    final response = await post(loginUrl, user.toJson());
 
     if (response.statusCode == HttpStatus.ok) {
-      return LoginModel.fromJson(response.body);
+      return LoginResposeModel.fromJson(response.body);
     } else {
       return null;
     }

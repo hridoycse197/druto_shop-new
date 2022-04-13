@@ -1,16 +1,17 @@
 // To parse this JSON data, do
 //
-//     final loginModel = loginModelFromJson(jsonString);
+//     final loginResposeModel = loginResposeModelFromJson(jsonString);
 
 import 'dart:convert';
 
-LoginModel loginModelFromJson(String str) =>
-    LoginModel.fromJson(json.decode(str));
+LoginResposeModel loginResposeModelFromJson(String str) =>
+    LoginResposeModel.fromJson(json.decode(str));
 
-String loginModelToJson(LoginModel data) => json.encode(data.toJson());
+String loginResposeModelToJson(LoginResposeModel data) =>
+    json.encode(data.toJson());
 
-class LoginModel {
-  LoginModel({
+class LoginResposeModel {
+  LoginResposeModel({
     this.status,
     this.message,
     this.user,
@@ -22,7 +23,8 @@ class LoginModel {
   User? user;
   String? token;
 
-  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+  factory LoginResposeModel.fromJson(Map<String, dynamic> json) =>
+      LoginResposeModel(
         status: json["status"],
         message: json["message"],
         user: User.fromJson(json["user"]),

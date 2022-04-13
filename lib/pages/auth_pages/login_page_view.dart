@@ -1,12 +1,13 @@
 import 'package:druto_shop/pages/auth_pages/controller/signin_controller.dart';
 import 'package:druto_shop/pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
+import '../../core/authentication_manager.dart';
 import '../../shared/styles/colors.dart';
 
 class SignInPageView extends GetView<LoginController> {
+  final AuthenticationManager _authManager = Get.put(AuthenticationManager());
   bool checked = true;
   final imagePath = 'assets/images/';
   @override
@@ -133,20 +134,20 @@ class SignInPageView extends GetView<LoginController> {
                       height: 10.0,
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Checkbox(
-                          value: checked,
-                          onChanged: (value) {},
-                        ),
-                        const Text(
-                          'Remember me',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w400,
-                            color: ColorResources.BUTTON_TEXT_COLOR,
-                          ),
-                        ),
+                        // Checkbox(
+                        //   value: checked,
+                        //   onChanged: (value) {},
+                        // ),
+                        // const Text(
+                        //   'Remember me',
+                        //   style: TextStyle(
+                        //     fontSize: 20,
+                        //     fontWeight: FontWeight.w400,
+                        //     color: ColorResources.BUTTON_TEXT_COLOR,
+                        //   ),
+                        // ),
                         TextButton(
                           child: const Text(
                             'Forget password',
@@ -172,11 +173,7 @@ class SignInPageView extends GetView<LoginController> {
                         minimumSize: const Size(double.infinity, 50.0),
                       ),
                       onPressed: () async {
-                        if (controller.checkLogin()) {
-                          await controller
-                              .userLogin(controller.emailController.text);
-                          //Get.to(HomePage());
-                        }
+                        controller.checkValidator();
                       },
                       child: const Text(
                         "Sign in",
