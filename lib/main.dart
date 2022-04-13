@@ -1,3 +1,5 @@
+
+
 import 'package:druto_shop/bindings/all_controller_binding.dart';
 import 'package:druto_shop/pages/auth_pages/login_page_view.dart';
 import 'package:druto_shop/splash_view.dart';
@@ -19,6 +21,7 @@ void main() async {
     ),
   );
   await GetStorage.init();
+
   runApp(const MyApp());
 }
 
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+
       debugShowCheckedModeBanner: false,
       title: 'Flutter Grocery App',
       theme: ThemeData(
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
       ),
       initialBinding: AllControllerBinding(),
       home: SplashView(), 
+
     );
   }
 }
