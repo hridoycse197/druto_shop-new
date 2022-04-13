@@ -21,6 +21,7 @@ class ColorResources {
   static const Color COLOR_PARIS_DAISY = Color(0xffFCDE52);
   static const Color COLOR_PRIMARY_DEEP = Color(0xff533C6C);
   static const Color COLOR_PRIMARY_LIGHT = Color(0xff714B89);
+
   static const Color THEME_APPBAR = Color(0xff246C85);
   static const Color DIALOG = Color(0xffF6F9FA);
   static const Color DISABLED = Color(0xffC6D3D7);
@@ -34,4 +35,17 @@ class ColorResources {
   static const Color Card = Color(0xFFF6F9FA);
   static const Color ERROR = Color(0xFFB00020);
   static const Color ON_ERROR = Color(0xFFFBF3F4);
+
+  static const Color COLOR_PRIMARY_KIMBERLY = Color(0xff66688F);
+  static const Color COLOR_BLACK = Color(0xff2C2C2C);
+  static const Color COLOR_GRAY = Color(0xff6E6E6E);
+  static const Color COLOR_VICTORIA = Color(0xff4A4B81);
+  static const Color COLOR_WHITE = Color(0xffFFFFFF);
+  static const Color COLOR_WHITE_SMOKE = Color(0xffF4F4F4);
+  static const Color COLOR_LOGAN = Color(0xff9C9EB9);
+  static const Color COLOR_RED = Color(0xffD92D4D);
+  static const Color COLOR_BUTTON = Color(0xff754D7F);
+  static const Color PRIMARY_DEEP = Color(0xFF392055);
+  static const Color DIVIDER_COLOR = Color(0xFFE1E1E8);
+  static const Color OFF_BG = Color(0xFF819C39);
 }

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 ThemeData dark = ThemeData(
   fontFamily: 'Roboto',
   primaryColor: ColorResources.PRIMARY_COLOR,
-  brightness: Brightness.dark,
+  brightness: Brightness.light,
   scaffoldBackgroundColor: ColorResources.SCAFFOLD,
   colorScheme: const ColorScheme(
     brightness: Brightness.dark,
