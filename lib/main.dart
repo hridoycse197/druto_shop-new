@@ -1,5 +1,4 @@
 import 'package:druto_shop/bindings/all_controller_binding.dart';
-import 'package:druto_shop/pages/auth_pages/login_page_view.dart';
 import 'package:druto_shop/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -35,7 +34,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: AllControllerBinding(),
-      home: SplashView(), 
+      home: SplashView(),
     );
   }
 }
