@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ColorResources {
-  static const Color whitecolor = Color(0xFFFFFFFF);
   static const Color PRIMARY_COLOR = Color(0xFFFFAB00);
   static const Color SECONDARY_COLOR = Color(0xFF1B5C74);
   static const Color BACKGROUND_COLOR = Color(0xffF2F2F2);
@@ -29,5 +28,5 @@ class ColorResources {
   static const Color PRIMARY_DEEP = Color(0xFF392055);
   static const Color DIVIDER_COLOR = Color(0xFFE1E1E8);
   static const Color OFF_BG = Color(0xFF819C39);
-  static const Color Black = Color(0xFF000000);
+
 }
