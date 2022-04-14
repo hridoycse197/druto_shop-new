@@ -17,7 +17,7 @@ class NameTextFormFieldWidget extends GetView<SignUpController> {
       controller: controller.nameController,
       decoration: const InputDecoration(
         enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorResources.Black),
+          borderSide: BorderSide(color: ColorResources.COLOR_BLACK),
         ),
         focusedBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
@@ -33,7 +33,7 @@ class NameTextFormFieldWidget extends GetView<SignUpController> {
           color: ColorResources.PRIMARY_COLOR,
         ),
         border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorResources.Black, width: 4),
+          borderSide: BorderSide(color: ColorResources.COLOR_BLACK, width: 4),
         ),
       ),
     );

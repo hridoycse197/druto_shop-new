@@ -18,29 +18,27 @@ class RePasswordWidget extends GetView<SignUpController> {
       controller: controller.confirmpasswordController,
       decoration: InputDecoration(
         suffixIcon: GestureDetector(
-          onTap: () => controller.passvisibility = !controller.passvisibility!,
+          onTap: () => controller.passvisibility = !controller.passvisibility,
           child: Icon(
-            controller.passvisibility!
-                ? Icons.visibility
-                : Icons.visibility_off,
+            controller.passvisibility ? Icons.visibility : Icons.visibility_off,
             color: ColorResources.PRIMARY_COLOR,
           ),
         ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorResources.Black),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(color: ColorResources.COLOR_BLACK),
         ),
-        focusedBorder: UnderlineInputBorder(
+        focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: ColorResources.PRIMARY_COLOR),
         ),
-        contentPadding: EdgeInsets.only(top: 18),
+        contentPadding: const EdgeInsets.only(top: 18),
         hintText: 'Confirm password',
-        prefixIcon: Icon(
+        prefixIcon: const Icon(
           Icons.person,
           size: 25,
           color: ColorResources.PRIMARY_COLOR,
         ),
-        border: UnderlineInputBorder(
-          borderSide: BorderSide(color: ColorResources.Black, width: 4),
+        border: const UnderlineInputBorder(
+          borderSide: BorderSide(color: ColorResources.COLOR_BLACK, width: 4),
         ),
       ),
     );

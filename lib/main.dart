@@ -1,8 +1,7 @@
-
-
 import 'package:druto_shop/bindings/all_controller_binding.dart';
-import 'package:druto_shop/pages/auth_pages/login_page_view.dart';
+
 import 'package:druto_shop/splash_view.dart';
+import 'package:druto_shop/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -31,16 +30,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-
       debugShowCheckedModeBanner: false,
       title: 'Flutter Grocery App',
-      theme: ThemeData(
-        fontFamily: 'Roboto',
-        primarySwatch: Colors.blue,
-      ),
+      theme: Themes.light,
+      darkTheme: Themes.dark,
       initialBinding: AllControllerBinding(),
-      home: SplashView(), 
-
+      home: SplashView(),
     );
   }
 }

@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../shared/styles/colors.dart';
 
-class customtextwidget extends StatelessWidget {
-  customtextwidget({Key? key, required this.title, double fontsize = 25})
+class CustomTextWidget extends StatelessWidget {
+  CustomTextWidget({Key? key, required this.title, double fontsize = 25})
       : super(key: key);
 
   final String title;
@@ -18,7 +18,7 @@ class customtextwidget extends StatelessWidget {
         title,
         style: GoogleFonts.raleway(
             fontSize: 18,
-            color: ColorResources.Black,
+            color: ColorResources.COLOR_BLACK,
             fontWeight: FontWeight.bold),
       ),
     );
