@@ -5,12 +5,11 @@ import 'package:druto_shop/pages/auth_pages/widgets/nameformfield.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/password_widget.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/phonenumber_widget.dart';
 import 'package:druto_shop/pages/auth_pages/widgets/repassword_widget.dart';
-import 'package:druto_shop/routes/allcontrollerbinding.dart';
+
 import 'package:druto_shop/services/signupservices.dart';
 import 'package:druto_shop/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import '../../shared/styles/colors.dart';
 import '../../widgets/customappbar.dart';
@@ -45,7 +44,7 @@ class SignUp extends GetView<SignUpController> {
                     height: height * 0.03,
                   ),
 
-                  customtextwidget(title: 'Name'),
+                  CustomTextWidget(title: 'Name'),
 
                   const NameTextFormFieldWidget(),
 
@@ -53,26 +52,26 @@ class SignUp extends GetView<SignUpController> {
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  customtextwidget(title: 'Phone Number'),
+                  CustomTextWidget(title: 'Phone Number'),
                   PhoneNumberTextFormFieldWidget(),
 
                   // Email Field
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  customtextwidget(title: 'Email'),
+                  CustomTextWidget(title: 'Email'),
                   EmailTextFormFieldWidget(),
                   // password
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  customtextwidget(title: 'Password'),
+                  CustomTextWidget(title: 'Password'),
                   PasswordWidget(),
                   // confirm password
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  customtextwidget(title: 'Confirm Password'),
+                  CustomTextWidget(title: 'Confirm Password'),
                   RePasswordWidget(),
                   // remember me text
                   Container(
@@ -81,7 +80,7 @@ class SignUp extends GetView<SignUpController> {
                     child: CheckboxListTile(
                       value: true,
                       onChanged: (newvalue) {},
-                      title: customtextwidget(title: 'Remember me'),
+                      title: CustomTextWidget(title: 'Remember me'),
                       activeColor: ColorResources.PRIMARY_COLOR,
                       checkColor: ColorResources.COLOR_BLACK,
                       controlAffinity: ListTileControlAffinity.leading,

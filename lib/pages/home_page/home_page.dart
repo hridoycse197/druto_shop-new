@@ -18,10 +18,11 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Home'),
         actions: [
           IconButton(
-              onPressed: () {
-                _authManager.logOut();
-              },
-              icon: const Icon(Icons.logout_rounded))
+            onPressed: () {
+              _authManager.logOut();
+            },
+            icon: const Icon(Icons.logout_rounded),
+          ),
         ],
       ),
       body: const Center(

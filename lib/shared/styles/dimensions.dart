@@ -11,4 +11,6 @@ class Dimensions {
   static const double pddingSizeDefault = 15.0;
   static const double paddingSizeLarge = 20.0;
   static const double paddingSizeExtraLarge = 25.0;
+
+  static const double iconSized = 28.0;
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'custom_text_widget.dart';
 import '../shared/styles/colors.dart';
@@ -13,7 +12,7 @@ class CustomAppbarWidget extends StatelessWidget {
     return AppBar(
       elevation: 0,
       titleSpacing: 0,
-      title: customtextwidget(title: title),
+      title: CustomTextWidget(title: title),
       leading: Container(
         margin: EdgeInsets.all(10),
         decoration: BoxDecoration(
