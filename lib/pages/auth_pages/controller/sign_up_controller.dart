@@ -1,8 +1,6 @@
-import 'package:druto_shop/models/sign_up_model.dart';
 import 'package:druto_shop/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
 
 class SignUpController extends GetxController {
   final GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
