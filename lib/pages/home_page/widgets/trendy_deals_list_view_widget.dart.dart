@@ -108,7 +108,7 @@ class ListViewItem extends GetView<HomePageController> {
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                      color: ColorResources.COLOR_BLACK,
+                      color: ColorResources.COLOR_BLACK.withOpacity(0.2),
                       spreadRadius: 1,
                       blurRadius: 4,
                       offset: Offset(-2, 2))
@@ -116,7 +116,7 @@ class ListViewItem extends GetView<HomePageController> {
                 image: DecorationImage(
                     fit: BoxFit.fill,
                     image: AssetImage(controller.allitem[index])),
-                color: ColorResources.COLOR_WHITE,
+                color: ColorResources.BACKGROUND_COLOR,
                 borderRadius: BorderRadius.all(
                   Radius.circular(11),
                 ),

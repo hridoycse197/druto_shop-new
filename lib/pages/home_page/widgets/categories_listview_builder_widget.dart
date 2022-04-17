@@ -111,7 +111,7 @@ class ListViewItem extends GetView<HomePageController> {
               color: ColorResources.BACKGROUND_COLOR,
               boxShadow: [
                 BoxShadow(
-                  color: ColorResources.COLOR_BLACK.withOpacity(0.5),
+                  color: ColorResources.COLOR_BLACK.withOpacity(0.2),
                   blurRadius: 4,
                   spreadRadius: 1,
                   offset: Offset(1, 2),

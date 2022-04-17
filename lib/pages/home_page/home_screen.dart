@@ -74,21 +74,24 @@ class HomeScreen extends GetView<HomePageController> {
                     items: controller.allitem.map((i) {
                       return Builder(
                         builder: (BuildContext context) {
-                          return Card(
-                            child: Container(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 5),
-                              width: width - width * 0.05,
-                              decoration: BoxDecoration(
-                                color: Colors.tealAccent,
-                                border: Border.all(
-                                    color: ColorResources.COLOR_BLACK,
-                                    width: 2),
-                                image: DecorationImage(
-                                    fit: BoxFit.cover,
-                                    image: AssetImage(i.toString())),
-                                borderRadius: BorderRadius.circular(10),
-                              ),
+                          return Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            width: width - width * 0.05,
+                            decoration: BoxDecoration(
+                              boxShadow: [
+                                BoxShadow(
+                                    color: ColorResources.COLOR_BLACK
+                                        .withOpacity(0.2),
+                                    blurRadius: 2,
+                                    offset: Offset(-1, 1))
+                              ],
+                              color: Colors.tealAccent,
+                              border: Border.all(
+                                  color: ColorResources.COLOR_BLACK, width: 2),
+                              image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: AssetImage(i.toString())),
+                              borderRadius: BorderRadius.circular(10),
                             ),
                           );
                         },
@@ -96,24 +99,28 @@ class HomeScreen extends GetView<HomePageController> {
                     }).toList(),
                   ),
                   Positioned(
-                    top: 50,
+                    top: 70,
                     right: 10,
-                    child: SliderArrowWidget(
-                        carouselController: carouselController,
-                        icon: Icons.arrow_forward_ios,
-                        ontapfunction: () {
-                          carouselController.nextPage();
-                        }),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          color: ColorResources.COLOR_WHITE,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Icon(Icons.arrow_forward_ios),
+                    ),
                   ),
                   Positioned(
-                    top: 50,
+                    top: 70,
                     left: 10,
-                    child: SliderArrowWidget(
-                        carouselController: carouselController,
-                        icon: Icons.arrow_back_ios,
-                        ontapfunction: () {
-                          carouselController.previousPage();
-                        }),
+                    child: Container(
+                      height: 30,
+                      width: 30,
+                      decoration: BoxDecoration(
+                          color: ColorResources.COLOR_WHITE,
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Icon(Icons.arrow_back_ios_new),
+                    ),
                   )
                 ],
               ),

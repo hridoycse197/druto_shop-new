@@ -23,7 +23,7 @@ class SearchBoxWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             boxShadow: [
               BoxShadow(
-                  color: ColorResources.COLOR_BLACK.withOpacity(0.7),
+                  color: ColorResources.COLOR_BLACK.withOpacity(0.2),
                   blurRadius: 2,
                   offset: Offset(-1, 1))
             ]),

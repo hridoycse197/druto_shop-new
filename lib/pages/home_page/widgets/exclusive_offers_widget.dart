@@ -113,11 +113,13 @@ class ListViewItem extends GetView<HomePageController> {
                     width: 80,
                     child: Column(
                       children: [
-                        Text('Cleanrs',
-                            style: GoogleFonts.roboto(
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                                color: ColorResources.COLOR_BLACK)),
+                        Text(
+                          'Cleaners',
+                          style: GoogleFonts.roboto(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w700,
+                              color: ColorResources.COLOR_BLACK),
+                        ),
                         Text('Up to 50% Off',
                             style: GoogleFonts.roboto(
                               color: ColorResources.COLOR_BLACK,
@@ -132,22 +134,22 @@ class ListViewItem extends GetView<HomePageController> {
                     width: 88,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        fit: BoxFit.fill,
+                        fit: BoxFit.cover,
                         image: AssetImage(controller.allitem[index]),
                       ),
                     ),
                   ),
                 ],
               ),
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
-                      color: ColorResources.COLOR_BLACK,
-                      spreadRadius: 1,
-                      blurRadius: 4,
+                      color: ColorResources.COLOR_BLACK.withOpacity(0.2),
+                      spreadRadius: 0.5,
+                      blurRadius: 2,
                       offset: Offset(-2, 2))
                 ],
-                color: ColorResources.COLOR_WHITE,
+                color: ColorResources.BACKGROUND_COLOR,
                 borderRadius: BorderRadius.all(
                   Radius.circular(11),
                 ),

@@ -77,7 +77,7 @@ class ProductGridview extends GetView<HomePageController> {
                           image: AssetImage(controller.allitem[index]),
                         ),
                         decoration: BoxDecoration(
-                            color: ColorResources.COLOR_WHITE,
+                            color: ColorResources.BACKGROUND_COLOR,
                             borderRadius: BorderRadius.circular(width * .02),
                             boxShadow: [
                               BoxShadow(
