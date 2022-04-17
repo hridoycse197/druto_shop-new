@@ -1,4 +1,5 @@
 import 'package:druto_shop/bindings/all_controller_binding.dart';
+import 'package:druto_shop/pages/home_page/home_screen.dart';
 
 import 'package:druto_shop/splash_view.dart';
 import 'package:druto_shop/theme/app_theme.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: Themes.light,
       darkTheme: Themes.dark,
       initialBinding: AllControllerBinding(),
-      home: SplashView(),
+      home: HomeScreen(),
     );
   }
 }

@@ -1,6 +1,7 @@
-import 'package:druto_shop/pages/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../home_page/home_screen.dart';
 
 class SignUpController extends GetxController {
   final GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
@@ -90,7 +91,7 @@ class SignUpController extends GetxController {
   void checkSignup() {
     final isValid = signupFormKey.currentState!.validate();
     if (isValid) {
-      Get.to(Homepage());
+      Get.to(HomeScreen());
     } else {
       print('this is error');
     }

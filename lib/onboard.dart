@@ -1,6 +1,5 @@
 import 'package:druto_shop/pages/all_products_page/all_products_view_page.dart';
 import 'package:druto_shop/pages/auth_pages/login_page_view.dart';
-import 'package:druto_shop/pages/home_page/home_page.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
