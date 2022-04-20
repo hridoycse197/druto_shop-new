@@ -12,12 +12,14 @@ class CustomTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.topLeft,
-      width: double.infinity,
+      decoration: BoxDecoration(
+        color: ColorResources.APPBAR_TITLE_BG,
+        borderRadius: BorderRadius.circular(10),
+      ),
       child: Text(
-        title,
+        '  ' + title + '  ',
         style: GoogleFonts.raleway(
-            fontSize: 18,
+            fontSize: 12,
             color: ColorResources.COLOR_BLACK,
             fontWeight: FontWeight.bold),
       ),

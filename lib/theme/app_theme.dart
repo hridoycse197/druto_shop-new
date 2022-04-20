@@ -6,7 +6,7 @@ class Themes {
   static final light = ThemeData.light().copyWith(
     primaryColor: ColorResources.PRIMARY_COLOR,
     brightness: Brightness.light,
-    scaffoldBackgroundColor: ColorResources.SCAFFOLD,
+    scaffoldBackgroundColor: ColorResources.COLOR_WHITE,
     colorScheme: const ColorScheme(
       brightness: Brightness.dark,
       primary: ColorResources.PRIMARY_COLOR,

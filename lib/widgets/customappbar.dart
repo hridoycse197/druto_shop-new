@@ -11,16 +11,17 @@ class CustomAppbarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      titleSpacing: 0,
+      centerTitle: true,
       title: CustomTextWidget(title: title),
       leading: Container(
-        margin: EdgeInsets.all(10),
-        decoration: BoxDecoration(
-            color: ColorResources.BACKGROUND_COLOR,
-            borderRadius: BorderRadius.all(Radius.circular(22))),
-        child:
-            Icon(Icons.arrow_back, size: 31, color: ColorResources.COLOR_WHITE),
+        margin: const EdgeInsets.all(10),
+        decoration: const BoxDecoration(
+            color: ColorResources.COLOR_BLACK,
+            borderRadius: BorderRadius.all(Radius.circular(17))),
+        child: Icon(Icons.arrow_back,
+            size: 28, color: ColorResources.PRIMARY_COLOR),
       ),
+      actions: [Icon(Icons.more_vert)],
     );
   }
 }

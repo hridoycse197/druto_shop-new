@@ -1,4 +1,5 @@
 import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
+import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
@@ -32,23 +33,21 @@ class PopularListViewBuilderWidget extends GetView<HomePageController> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: GoogleFonts.roboto(
-                  color: ColorResources.COLOR_BLACK,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700),
+            CustomTextWidgets(
+              title: title,
+              fontsize: 20,
+              fontweight: FontWeight.w700,
+              fontcolor: ColorResources.COLOR_BLACK,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'see all',
-                  style: GoogleFonts.roboto(
-                      color: ColorResources.COLOR_BLACK,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
+                CustomTextWidgets(
+                  title: 'see all',
+                  fontsize: 20,
+                  fontweight: FontWeight.w400,
+                  fontcolor: ColorResources.COLOR_BLACK,
                 ),
                 IconButton(
                   onPressed: onarrowtapfunction,
@@ -95,20 +94,20 @@ class ListViewItem extends GetView<HomePageController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 3.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-            height: 145,
-            width: 146,
+            height: 148,
+            width: 144,
             child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Container(
                     height: 75,
-                    width: 140,
+                    width: 144,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.cover,
@@ -128,13 +127,11 @@ class ListViewItem extends GetView<HomePageController> {
             ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: ColorResources.BACKGROUND_COLOR,
+              color: ColorResources.ON_SECONDARY,
               boxShadow: [
                 BoxShadow(
-                  color: ColorResources.COLOR_BLACK.withOpacity(0.2),
-                  blurRadius: 4,
+                  color: ColorResources.DIVIDER,
                   spreadRadius: 1,
-                  offset: Offset(1, 2),
                 ),
               ],
             ),

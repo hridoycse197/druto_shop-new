@@ -1,8 +1,11 @@
 import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
+import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../widgets/custom_text_widget.dart';
 
 class CategoryListViewBuilderWidget extends GetView<HomePageController> {
   static var categoryname = [
@@ -34,23 +37,21 @@ class CategoryListViewBuilderWidget extends GetView<HomePageController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                title,
-                style: GoogleFonts.roboto(
-                    color: ColorResources.COLOR_BLACK,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w700),
+              CustomTextWidgets(
+                title: title,
+                fontcolor: ColorResources.COLOR_BLACK,
+                fontsize: 24,
+                fontweight: FontWeight.w700,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(
-                    'see all',
-                    style: GoogleFonts.roboto(
-                        color: ColorResources.COLOR_BLACK,
-                        fontSize: 20,
-                        fontWeight: FontWeight.w700),
+                  CustomTextWidgets(
+                    title: 'see all',
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 18,
+                    fontweight: FontWeight.w400,
                   ),
                   IconButton(
                     onPressed: onarrowtapfunction,
@@ -64,13 +65,13 @@ class CategoryListViewBuilderWidget extends GetView<HomePageController> {
             ],
           ),
           SizedBox(
-            height: 120,
+            height: 140,
             child: ListView.separated(
-              separatorBuilder: (context, index) => SizedBox(
-                width: 7,
+              separatorBuilder: (context, index) => const SizedBox(
+                width: 14,
               ),
               scrollDirection: Axis.horizontal,
-              itemCount: 10,
+              itemCount: categoryname.length,
               itemBuilder: (BuildContext context, int index) {
                 return ListViewItem(
                   categoryname: categoryname,
@@ -108,7 +109,7 @@ class ListViewItem extends GetView<HomePageController> {
           width: 75.66,
           decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10)),
-              color: ColorResources.BACKGROUND_COLOR,
+              color: ColorResources.ON_SECONDARY,
               boxShadow: [
                 BoxShadow(
                   color: ColorResources.COLOR_BLACK.withOpacity(0.2),
@@ -121,13 +122,15 @@ class ListViewItem extends GetView<HomePageController> {
         SizedBox(
           height: 10,
         ),
-        Text(
-          categoryname[index],
-          style: GoogleFonts.roboto(
-              color: ColorResources.COLOR_BLACK,
-              fontSize: 10,
-              fontWeight: FontWeight.w500),
-        )
+        Container(
+            width: 76,
+            child: CustomTextWidgets(
+              textAlign: TextAlign.center,
+              title: categoryname[index],
+              fontsize: 14,
+              fontweight: FontWeight.w500,
+              fontcolor: ColorResources.COLOR_BLACK,
+            ))
       ],
     );
   }

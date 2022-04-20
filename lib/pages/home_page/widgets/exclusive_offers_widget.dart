@@ -1,11 +1,11 @@
+import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
+import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/src/simple/get_view.dart';
+import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../controller/home_page_controller.dart';
-
-class ExclusiveOffersWidget extends GetView<HomePageController> {
+class ExlusiveOffersWidget extends GetView<HomePageController> {
   static var categoryname = [
     'Vegetables and fruits',
     'Oils and Ghee',
@@ -22,7 +22,7 @@ class ExclusiveOffersWidget extends GetView<HomePageController> {
   ];
   String title;
   VoidCallback onarrowtapfunction;
-  ExclusiveOffersWidget(
+  ExlusiveOffersWidget(
       {Key? key, required this.title, required this.onarrowtapfunction})
       : super(key: key);
 
@@ -33,23 +33,21 @@ class ExclusiveOffersWidget extends GetView<HomePageController> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              title,
-              style: GoogleFonts.roboto(
-                  color: ColorResources.COLOR_BLACK,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700),
+            CustomTextWidgets(
+              title: title,
+              fontsize: 20,
+              fontweight: FontWeight.w700,
+              fontcolor: ColorResources.COLOR_BLACK,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
-                  'see all',
-                  style: GoogleFonts.roboto(
-                      color: ColorResources.COLOR_BLACK,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
+                CustomTextWidgets(
+                  title: 'see all',
+                  fontsize: 20,
+                  fontweight: FontWeight.w400,
+                  fontcolor: ColorResources.COLOR_BLACK,
                 ),
                 IconButton(
                   onPressed: onarrowtapfunction,
@@ -63,11 +61,9 @@ class ExclusiveOffersWidget extends GetView<HomePageController> {
           ],
         ),
         SizedBox(
-          height: 110,
-          child: ListView.separated(
-            separatorBuilder: (context, index) => const SizedBox(
-              width: 7,
-            ),
+          height: 275,
+          child: ListView.builder(
+            shrinkWrap: true,
             scrollDirection: Axis.horizontal,
             itemCount: controller.allitem.length,
             itemBuilder: (BuildContext context, int index) {
@@ -96,66 +92,107 @@ class ListViewItem extends GetView<HomePageController> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 4,
+      padding: const EdgeInsets.symmetric(horizontal: 5.5),
+      child: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: ColorResources.DIVIDER),
+              color: ColorResources.ON_SECONDARY,
             ),
-            Container(
-              width: 216,
-              height: 100,
-              child: Row(
-                children: [
-                  Container(
-                    padding: EdgeInsets.only(left: 10, top: 10),
-                    alignment: Alignment.topLeft,
-                    width: 80,
-                    child: Column(
-                      children: [
-                        Text(
-                          'Cleaners',
-                          style: GoogleFonts.roboto(
-                              fontSize: 17,
-                              fontWeight: FontWeight.w700,
-                              color: ColorResources.COLOR_BLACK),
-                        ),
-                        Text('Up to 50% Off',
-                            style: GoogleFonts.roboto(
-                              color: ColorResources.COLOR_BLACK,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                            ))
-                      ],
-                    ),
+            alignment: Alignment.topCenter,
+            height: 275,
+            width: 184,
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Image(
+                    height: 150,
+                    image: AssetImage(controller.allitem[index]),
                   ),
-                  Container(
-                    margin: EdgeInsets.all(20),
-                    width: 88,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage(controller.allitem[index]),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                      color: ColorResources.COLOR_BLACK.withOpacity(0.2),
-                      spreadRadius: 0.5,
-                      blurRadius: 2,
-                      offset: Offset(-2, 2))
-                ],
-                color: ColorResources.BACKGROUND_COLOR,
-                borderRadius: BorderRadius.all(
-                  Radius.circular(11),
                 ),
-              ),
+                Container(
+                  width: 184,
+                  height: 91,
+                  color: ColorResources.COLOR_WHITE,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          CustomTextWidgets(
+                              title: '\$ 90.00',
+                              fontsize: 14,
+                              fontweight: FontWeight.w500,
+                              fontcolor: ColorResources.COLOR_BLACK),
+                          CustomTextWidgets(
+                              textDecoration: TextDecoration.lineThrough,
+                              title: '\$ 90.00',
+                              fontsize: 14,
+                              fontweight: FontWeight.w500,
+                              fontcolor: ColorResources.SECONDARY_COLOR)
+                        ],
+                      ),
+                      SizedBox(
+                        height: 2,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 20.0),
+                        child: CustomTextWidgets(
+                            title: 'Cleaners ',
+                            fontsize: 19,
+                            fontweight: FontWeight.w400,
+                            fontcolor: ColorResources.COLOR_BLACK),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Center(
+                        child: Container(
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.add_shopping_cart_sharp),
+                              CustomTextWidgets(
+                                  title: 'Add to cart',
+                                  fontsize: 12,
+                                  fontweight: FontWeight.w500,
+                                  fontcolor: ColorResources.COLOR_BLACK)
+                            ],
+                          ),
+                          margin: EdgeInsets.all(5),
+                          width: 145,
+                          height: 28,
+                          decoration: BoxDecoration(
+                              color: ColorResources.PRIMARY_COLOR,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(5))),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+          const Positioned(
+            right: 13,
+            top: 10,
+            child: Icon(
+              Icons.favorite_outlined,
+              color: ColorResources.SECONDARY_VARIANT,
+              size: 35,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

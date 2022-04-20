@@ -37,10 +37,9 @@ class HomeScreen extends GetView<HomePageController> {
           preferredSize: Size.fromHeight(kToolbarHeight),
           child: HomeScreenCustomAppbarWidget(
               title: 'assets/images/homepageappbarimage.png')),
-      backgroundColor: ColorResources.BACKGROUND_COLOR,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: width * 0.04),
+          padding: EdgeInsets.symmetric(horizontal: 10),
           child: ListView(
             controller: controller.scrollController,
             children: [
@@ -69,27 +68,19 @@ class HomeScreen extends GetView<HomePageController> {
                       autoPlay: true,
                       autoPlayCurve: Curves.bounceInOut,
                       viewportFraction: 1,
-                      height: height * 0.20,
+                      height: height * 0.17,
                     ),
                     items: controller.allitem.map((i) {
                       return Builder(
                         builder: (BuildContext context) {
                           return Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
                             width: width - width * 0.05,
                             decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    color: ColorResources.COLOR_BLACK
-                                        .withOpacity(0.2),
-                                    blurRadius: 2,
-                                    offset: Offset(-1, 1))
-                              ],
                               color: Colors.tealAccent,
                               border: Border.all(
                                   color: ColorResources.COLOR_BLACK, width: 2),
                               image: DecorationImage(
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fitHeight,
                                   image: AssetImage(i.toString())),
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -99,27 +90,33 @@ class HomeScreen extends GetView<HomePageController> {
                     }).toList(),
                   ),
                   Positioned(
-                    top: 70,
+                    top: 50,
                     right: 10,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: ColorResources.COLOR_WHITE,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Icon(Icons.arrow_forward_ios),
+                    child: GestureDetector(
+                      onTap: (() => carouselController.nextPage()),
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            color: ColorResources.COLOR_WHITE.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Icon(Icons.arrow_forward_ios),
+                      ),
                     ),
                   ),
                   Positioned(
-                    top: 70,
+                    top: 50,
                     left: 10,
-                    child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(
-                          color: ColorResources.COLOR_WHITE,
-                          borderRadius: BorderRadius.circular(20)),
-                      child: Icon(Icons.arrow_back_ios_new),
+                    child: GestureDetector(
+                      onTap: (() => carouselController.previousPage()),
+                      child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(
+                            color: ColorResources.COLOR_WHITE.withOpacity(0.8),
+                            borderRadius: BorderRadius.circular(20)),
+                        child: Icon(Icons.arrow_back_ios_new),
+                      ),
                     ),
                   )
                 ],
@@ -128,14 +125,14 @@ class HomeScreen extends GetView<HomePageController> {
 
               //searchbox start
               SizedBox(
-                height: height * 0.01,
+                height: height * 0.04,
               ),
               SearchBoxWidget(width: width, height: height),
               //searchbox end
 
               //Categories div start
               SizedBox(
-                height: height * 0.02,
+                height: height * 0.04,
               ),
               CategoryListViewBuilderWidget(
                 title: 'Categories',
@@ -145,7 +142,7 @@ class HomeScreen extends GetView<HomePageController> {
 
               //Popular div start
               SizedBox(
-                height: height * 0.004,
+                height: height * 0.01,
               ),
               PopularListViewBuilderWidget(
                 title: 'Popular',
@@ -154,16 +151,20 @@ class HomeScreen extends GetView<HomePageController> {
               //popular div end
 
               //Exclusive div start
-
-              ExclusiveOffersWidget(
-                title: 'Exclusive offers',
+              SizedBox(
+                height: height * 0.02,
+              ),
+              ExlusiveOffersWidget(
                 onarrowtapfunction: () {},
+                title: 'Exclusive offers',
               ),
 
               //Trendy div start
-
+              SizedBox(
+                height: height * 0.02,
+              ),
               TrendyDealsListViewWidget(
-                title: 'Trendy Deals',
+                title: 'Trending Deals',
                 onarrowtapfunction: () {},
               ),
               //Trendy div end
