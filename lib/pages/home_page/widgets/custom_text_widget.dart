@@ -9,6 +9,7 @@ class CustomTextWidgets extends StatelessWidget {
   Color fontcolor;
   TextAlign textAlign;
   TextDecoration textDecoration;
+  TextOverflow overflow;
   CustomTextWidgets(
       {Key? key,
       required this.title,
@@ -16,6 +17,7 @@ class CustomTextWidgets extends StatelessWidget {
       required this.fontsize,
       required this.fontweight,
       required this.fontcolor,
+      this.overflow = TextOverflow.ellipsis,
       this.textAlign = TextAlign.left})
       : super(key: key);
 
@@ -26,6 +28,7 @@ class CustomTextWidgets extends StatelessWidget {
     return Text(
       title,
       textAlign: textAlign,
+      overflow: overflow,
       style: GoogleFonts.roboto(
           decoration: textDecoration,
           color: fontcolor,
