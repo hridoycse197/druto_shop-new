@@ -1,10 +1,11 @@
-import 'package:druto_shop/pages/all_products_page/controller/all_products_controller.dart';
-import 'package:druto_shop/pages/all_products_page/model/product_model.dart';
-import 'package:druto_shop/pages/all_products_page/widgets/item_vew.dart';
 import 'package:druto_shop/shared/styles/dimensions.dart';
 import 'package:druto_shop/widgets/app_bar_widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../all_products_page/model/product_model.dart';
+import '../../all_products_page/provider/all_products_controller.dart';
+import '../../all_products_page/widgets/item_vew.dart';
 
 class AllProdutsViewPage extends GetView<AllProductsController> {
   List<ProductModel> productsList = [

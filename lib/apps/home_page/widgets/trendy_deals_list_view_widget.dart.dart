@@ -1,11 +1,11 @@
-import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../controller/home_page_controller.dart';
+import '../provider/home_page_controller.dart';
+import '../../../widgets/custom_text_widget.dart';
 
 class TrendyDealsListViewWidget extends GetView<HomePageController> {
   static var categoryname = [
@@ -97,7 +97,7 @@ class ListViewItem extends GetView<HomePageController> {
     return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: ColorResources.Trendy_item_bg,
           ),
           width: 245,
@@ -132,7 +132,7 @@ class ListViewItem extends GetView<HomePageController> {
                             ),
                           ),
                           minimumSize: MaterialStateProperty.all(
-                            Size(91, 27),
+                            const Size(91, 27),
                           ),
                           backgroundColor: MaterialStateProperty.all(
                               ColorResources.COLOR_WHITE)),
@@ -147,7 +147,7 @@ class ListViewItem extends GetView<HomePageController> {
                 ),
               ),
               RotationTransition(
-                turns: AlwaysStoppedAnimation(25 / 360),
+                turns: const AlwaysStoppedAnimation(25 / 360),
                 child: Image(
                   width: 65,
                   height: 173,

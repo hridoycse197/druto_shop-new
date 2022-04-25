@@ -1,19 +1,20 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
-import 'package:druto_shop/pages/home_page/widgets/exclusive_offers_widget.dart';
-import 'package:druto_shop/pages/home_page/widgets/home_screen_custom_app_bar.dart';
-import 'package:druto_shop/pages/home_page/widgets/popular_list_view_widget.dart';
-import 'package:druto_shop/pages/home_page/widgets/slider_arrow_widget.dart';
-import 'package:druto_shop/pages/home_page/widgets/trendy_deals_list_view_widget.dart.dart';
+
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:druto_shop/widgets/customappbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:scroll_indicator/scroll_indicator.dart';
-import 'widgets/categories_listview_builder_widget.dart';
-import 'widgets/product_grid_view.dart';
-import 'widgets/search_box_widget.dart';
+
+import '../provider/home_page_controller.dart';
+import '../widgets/categories_listview_builder_widget.dart';
+import '../widgets/exclusive_offers_widget.dart';
+import '../widgets/home_screen_custom_app_bar.dart';
+import '../widgets/popular_list_view_widget.dart';
+import '../widgets/product_grid_view.dart';
+import '../widgets/search_box_widget.dart';
+import '../widgets/trendy_deals_list_view_widget.dart.dart';
 
 class HomeScreen extends GetView<HomePageController> {
   HomeScreen({Key? key}) : super(key: key);

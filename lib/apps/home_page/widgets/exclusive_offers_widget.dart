@@ -1,9 +1,10 @@
-import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
-import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../provider/home_page_controller.dart';
+import '../../../widgets/custom_text_widget.dart';
 
 class ExlusiveOffersWidget extends GetView<HomePageController> {
   static var categoryname = [

@@ -12,7 +12,12 @@ class CustomAppbarWidget extends StatelessWidget {
     return AppBar(
       elevation: 0,
       centerTitle: true,
-      title: CustomTextWidget(title: title),
+      title: CustomTextWidgets(
+        fontcolor: ColorResources.COLOR_BLACK,
+        fontsize: 15,
+        title: title,
+        fontweight: FontWeight.bold,
+      ),
       leading: Container(
         margin: const EdgeInsets.all(10),
         decoration: const BoxDecoration(

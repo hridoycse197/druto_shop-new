@@ -1,5 +1,6 @@
-import 'package:druto_shop/pages/home_page/controller/home_page_controller.dart';
-import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
+import 'package:druto_shop/apps/home_page/provider/home_page_controller.dart';
+import 'package:druto_shop/widgets/custom_text_widget.dart';
+
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';

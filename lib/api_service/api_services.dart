@@ -1,8 +1,8 @@
-import 'package:druto_shop/pages/auth_pages/model/login_request_model.dart';
 import 'package:get/get_connect/connect.dart';
 import 'package:get/get_connect/http/src/status/http_status.dart';
 
-import '../pages/auth_pages/model/signin_model.dart';
+import '../apps/auth_page/model/login_request_model.dart';
+import '../apps/auth_page/model/signin_model.dart';
 
 class LoginApiService extends GetConnect {
   final String loginUrl = 'https://script.drutosoft.com/grocery/api/login';

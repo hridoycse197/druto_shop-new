@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../home_page/home_screen.dart';
+import '../../home_page/screens/home_screen.dart';
 
 class SignUpController extends GetxController {
   final GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();

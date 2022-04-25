@@ -1,4 +1,3 @@
-import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:druto_shop/pages/product_details_screen/widgets/add_to_cart_button.dart';
 import 'package:druto_shop/pages/product_details_screen/widgets/buy_button.dart';
 import 'package:druto_shop/pages/product_details_screen/widgets/product_name_widget.dart';
@@ -9,13 +8,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/state_manager.dart';
 
+import '../../widgets/custom_text_widget.dart';
 import 'controller/product_details_controller.dart';
 import 'widgets/order_quantity_widget.dart';
 import 'widgets/product_name_and_rating_widget.dart';
 
 class ProductDetailsScreen extends GetView<ProductDetailsController> {
   ProductDetailsScreen({Key? key}) : super(key: key);
-  ProductDetailsController controller = ProductDetailsController();
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +62,7 @@ class ProductDetailsScreen extends GetView<ProductDetailsController> {
                         Container(
                           padding: EdgeInsets.all(8),
                           width: width - 25,
-                          height: height * .90,
+                          height: height * .75,
                           decoration: const BoxDecoration(
                             color: ColorResources.BACKGROUND_COLOR,
                             borderRadius: BorderRadius.only(

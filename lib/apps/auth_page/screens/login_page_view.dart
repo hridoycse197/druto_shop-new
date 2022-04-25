@@ -1,10 +1,9 @@
-import 'package:druto_shop/pages/auth_pages/controller/signin_controller.dart';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../core/authentication_manager.dart';
-import '../../shared/styles/colors.dart';
+import '../../../core/authentication_manager.dart';
+import '../../../shared/styles/colors.dart';
+import '../provider/signin_controller.dart';
 
 class SignInPageView extends GetView<LoginController> {
   final AuthenticationManager _authManager = Get.put(AuthenticationManager());

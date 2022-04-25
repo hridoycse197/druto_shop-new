@@ -3,26 +3,37 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../shared/styles/colors.dart';
 
-class CustomTextWidget extends StatelessWidget {
-  CustomTextWidget({Key? key, required this.title, double fontsize = 25})
+class CustomTextWidgets extends StatelessWidget {
+  double fontsize;
+  FontWeight fontweight;
+  Color fontcolor;
+  TextAlign textAlign;
+  TextDecoration textDecoration;
+  TextOverflow overflow;
+  CustomTextWidgets(
+      {Key? key,
+      required this.title,
+      this.textDecoration = TextDecoration.none,
+      required this.fontsize,
+      required this.fontweight,
+      required this.fontcolor,
+      this.overflow = TextOverflow.ellipsis,
+      this.textAlign = TextAlign.left})
       : super(key: key);
 
   final String title;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: ColorResources.APPBAR_TITLE_BG,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        '  ' + title + '  ',
-        style: GoogleFonts.raleway(
-            fontSize: 12,
-            color: ColorResources.COLOR_BLACK,
-            fontWeight: FontWeight.bold),
-      ),
+    return Text(
+      title,
+      textAlign: textAlign,
+      overflow: overflow,
+      style: GoogleFonts.roboto(
+          decoration: textDecoration,
+          color: fontcolor,
+          fontSize: fontsize,
+          fontWeight: fontweight),
     );
   }
 }

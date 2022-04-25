@@ -1,10 +1,11 @@
-import 'package:druto_shop/pages/home_page/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../shared/styles/colors.dart';
-import '../controller/home_page_controller.dart';
+
+import '../provider/home_page_controller.dart';
+import '../../../widgets/custom_text_widget.dart';
 
 class ProductGridview extends GetView<HomePageController> {
   const ProductGridview({

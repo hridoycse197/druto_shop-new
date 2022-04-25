@@ -1,9 +1,10 @@
-import 'package:druto_shop/pages/all_products_page/controller/all_products_controller.dart';
-import 'package:druto_shop/pages/all_products_page/model/product_model.dart';
 import 'package:druto_shop/shared/styles/colors.dart';
 import 'package:druto_shop/shared/styles/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../model/product_model.dart';
+import '../provider/all_products_controller.dart';
 
 class ItemView extends GetView<AllProductsController> {
   final imagePath = 'assets/images/';

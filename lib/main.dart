@@ -1,5 +1,4 @@
 import 'package:druto_shop/bindings/all_controller_binding.dart';
-import 'package:druto_shop/pages/home_page/home_screen.dart';
 import 'package:druto_shop/pages/product_details_screen/product_details_screen.dart';
 
 import 'package:druto_shop/splash_view.dart';

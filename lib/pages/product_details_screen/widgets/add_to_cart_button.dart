@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../widgets/custom_text_widget.dart';
 import '../../../shared/styles/colors.dart';
-import '../../home_page/widgets/custom_text_widget.dart';
 
 class AddToCartButton extends StatelessWidget {
   BoxConstraints constraints;

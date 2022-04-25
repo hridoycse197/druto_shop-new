@@ -1,19 +1,18 @@
 import 'package:druto_shop/models/sign_up_model.dart';
-import 'package:druto_shop/pages/auth_pages/controller/sign_up_controller.dart';
-import 'package:druto_shop/pages/auth_pages/widgets/emailformfield.dart';
-import 'package:druto_shop/pages/auth_pages/widgets/nameformfield.dart';
-import 'package:druto_shop/pages/auth_pages/widgets/password_widget.dart';
-import 'package:druto_shop/pages/auth_pages/widgets/phonenumber_widget.dart';
-import 'package:druto_shop/pages/auth_pages/widgets/repassword_widget.dart';
 
 import 'package:druto_shop/services/signupservices.dart';
 import 'package:druto_shop/widgets/custom_text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../shared/styles/colors.dart';
-import '../../widgets/customappbar.dart';
-import 'widgets/custom_text_form_field.dart';
+import '../../../shared/styles/colors.dart';
+import '../../../widgets/customappbar.dart';
+import '../provider/sign_up_controller.dart';
+import '../widgets/emailformfield.dart';
+import '../widgets/nameformfield.dart';
+import '../widgets/password_widget.dart';
+import '../widgets/phonenumber_widget.dart';
+import '../widgets/repassword_widget.dart';
 
 class SignUp extends GetView<SignUpController> {
   static const route = '/signup';
@@ -44,7 +43,12 @@ class SignUp extends GetView<SignUpController> {
                     height: height * 0.03,
                   ),
 
-                  CustomTextWidget(title: 'Name'),
+                  CustomTextWidgets(
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 15,
+                    title: 'Name',
+                    fontweight: FontWeight.bold,
+                  ),
 
                   const NameTextFormFieldWidget(),
 
@@ -52,26 +56,46 @@ class SignUp extends GetView<SignUpController> {
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  CustomTextWidget(title: 'Phone Number'),
+                  CustomTextWidgets(
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 15,
+                    title: 'Phone Number',
+                    fontweight: FontWeight.bold,
+                  ),
                   PhoneNumberTextFormFieldWidget(),
 
                   // Email Field
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  CustomTextWidget(title: 'Email'),
+                  CustomTextWidgets(
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 15,
+                    title: 'Email',
+                    fontweight: FontWeight.bold,
+                  ),
                   EmailTextFormFieldWidget(),
                   // password
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  CustomTextWidget(title: 'Password'),
+                  CustomTextWidgets(
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 15,
+                    title: 'Password',
+                    fontweight: FontWeight.bold,
+                  ),
                   PasswordWidget(),
                   // confirm password
                   SizedBox(
                     height: height * 0.05,
                   ),
-                  CustomTextWidget(title: 'Confirm Password'),
+                  CustomTextWidgets(
+                    fontcolor: ColorResources.COLOR_BLACK,
+                    fontsize: 15,
+                    title: 'Confirm Password',
+                    fontweight: FontWeight.bold,
+                  ),
                   RePasswordWidget(),
                   // remember me text
                   Container(
@@ -80,7 +104,12 @@ class SignUp extends GetView<SignUpController> {
                     child: CheckboxListTile(
                       value: true,
                       onChanged: (newvalue) {},
-                      title: CustomTextWidget(title: 'Remember me'),
+                      title: CustomTextWidgets(
+                        fontcolor: ColorResources.COLOR_BLACK,
+                        fontsize: 15,
+                        title: 'Remember me',
+                        fontweight: FontWeight.bold,
+                      ),
                       activeColor: ColorResources.PRIMARY_COLOR,
                       checkColor: ColorResources.COLOR_BLACK,
                       controlAffinity: ListTileControlAffinity.leading,

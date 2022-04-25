@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../widgets/custom_text_widget.dart';
 import '../../../shared/styles/colors.dart';
-import '../../home_page/widgets/custom_text_widget.dart';
 import '../controller/product_details_controller.dart';
 
 class OrderQuantityWidget extends StatelessWidget {

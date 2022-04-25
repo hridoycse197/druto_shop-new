@@ -1,9 +1,10 @@
 import 'package:druto_shop/core/authentication_manager.dart';
-import 'package:druto_shop/pages/auth_pages/model/login_request_model.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../api_service/api_services.dart';
+import '../model/login_request_model.dart';
 
 class LoginController extends GetxController {
   late final AuthenticationManager _authManager;
